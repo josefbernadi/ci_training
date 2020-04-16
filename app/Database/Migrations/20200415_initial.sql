@@ -1,6 +1,7 @@
 CREATE TABLE ms_company (
     company_id int AUTO_INCREMENT,
     company_name varchar(50),
+    company_phone varchar(20),
     company_address text,
     PRIMARY KEY (company_id)
 );
