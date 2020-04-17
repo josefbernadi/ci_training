@@ -14,4 +14,22 @@ class CompanyModel extends Model
             return $this->findAll();
         }
     }
+
+    public function saveCompany($data)
+    {
+        $query = $this->db->table($this->table)->insert($data);
+        return $query;
+    }
+
+    public function updateCompany($data, $id)
+    {
+        $query = $this->db->table($this->table)->update($data, array('company_id' => $id));
+        return $query;
+    }
+
+    public function deleteCompany($id)
+    {
+        $query = $this->db->table($this->table)->delete(array('company_id' => $id));
+        return $query;
+    } 
 }
