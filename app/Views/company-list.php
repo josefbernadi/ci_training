@@ -17,7 +17,7 @@
                 <h3>Company List</h3>
             </div>
             <div class="col-md-2">
-                <h3><a href="/add-company">+</a></h3>
+                <h3><a href="/edit-company">+</a></h3>
             </div>
         </div>
         <div class="row mt-2">

@@ -32,6 +32,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'CompanyController::showCompanyList');
+$routes->get('/edit-company', function () {
+	return view('edit-company');
+});
+$routes->get('/edit-company/(:num)', 'CompanyController::showSpecificCompany/$1');
+$routes->get('/delete-company/(:num)', 'CompanyController::deleteCompany/$1');
+
+$routes->post('/edit-company/(:num)', 'CompanyController::editCompany/$1');
+$routes->post('/edit-company/add', 'CompanyController::addCompany');
+$routes->post('/add-company', 'CompanyController::addCompany');
 
 /**
  * --------------------------------------------------------------------
