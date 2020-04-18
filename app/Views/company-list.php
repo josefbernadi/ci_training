@@ -36,7 +36,7 @@
                             <td><?php echo $row['company_name']; ?></td>
                             <td><?php echo $row['company_phone']; ?></td>
                             <td><?php echo $row['company_address']; ?></td>
-                            <td><a href="/employee-list/<?php echo $row['company_id'] ?>">Employee List</a> | <a href="/edit-company/<?php echo $row['company_id'] ?>">Edit</a> | <a href="/delete-company/<?php echo $row['company_id'] ?>">Delete</a></td>
+                            <td><a href="/detail-company/<?php echo $row['company_id'] ?>">Detail</a> | <a href="/employee-list/<?php echo $row['company_id'] ?>">Employee List</a> | <a href="/edit-company/<?php echo $row['company_id'] ?>">Edit</a> | <a href="/delete-company/<?php echo $row['company_id'] ?>">Delete</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
