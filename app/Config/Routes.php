@@ -37,6 +37,7 @@ $routes->get('/edit-company', function () {
 });
 $routes->get('/edit-company/(:num)', 'CompanyController::showSpecificCompany/$1');
 $routes->get('/delete-company/(:num)', 'CompanyController::deleteCompany/$1');
+$routes->get('/detail-company/(:num)', 'CompanyController::showCompanyDetail/$1');
 
 $routes->post('/edit-company/(:num)', 'CompanyController::editCompany/$1');
 $routes->post('/edit-company/add', 'CompanyController::addCompany');

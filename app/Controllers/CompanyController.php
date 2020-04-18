@@ -17,6 +17,13 @@ class CompanyController extends BaseController
 		return view('edit-company', $data);
 	}
 
+	public function showCompanyDetail($id){
+		$company = new CompanyModel();
+		$data['company'] = $company->getCompany($id)->getRow();
+		return view('detail-company', $data);
+	}
+
+
 	public function addCompany(){
 		$company = new CompanyModel();
 		$data = array(
