@@ -8,6 +8,7 @@ CREATE TABLE ms_company (
 CREATE TABLE ms_employee (
     employee_id int AUTO_INCREMENT,
     company_id int,
+    employee_name varchar(50),
     employee_gender int,
     employee_birthday date,
     employee_picture varchar(100),
