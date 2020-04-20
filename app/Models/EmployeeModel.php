@@ -28,13 +28,13 @@ class EmployeeModel extends Model
 
     public function updateEmployee($data, $id)
     {
-        $query = $this->db->table($this->table)->update($data, array('company_id' => $id));
+        $query = $this->db->table($this->table)->update($data, array('employee_id' => $id));
         return $query;
     }
 
     public function deleteEmployee($id)
     {
-        $query = $this->db->table($this->table)->delete(array('company_id' => $id));
+        $query = $this->db->table($this->table)->delete(array('employee_id' => $id));
         return $query;
     } 
 }

@@ -15,10 +15,10 @@
         <div class="row mt-2">
             <div class="col-md-6">
                 <!-- <?php var_dump($employee); ?> -->
-                <h3>Employee List - <?php echo ($employee) ? $employee[0]['company_name'] : ""; ?></h3>
+                <h3>Employee List - <?php echo ($company_name) ? $company_name : ""; ?></h3>
             </div>
             <div class="col-md-6">
-                <h3><a href="/edit-employee">+</a></h3>
+                <h3><a href="/edit-employee/<?php echo ($company_id) ? $company_id : ""; ?>">+</a></h3>
             </div>
         </div>
         <div class="row mt-2">
@@ -37,8 +37,8 @@
                             <tr>
                                 <td><?php echo $row['employee_name']; ?></td>
                                 <td><?php echo ($row['employee_gender'] == "1") ? "Male":"Female"; ?></td>
-                                <td><?php echo $row['company_address']; ?></td>
-                                <td><a href="#" onclick="view(<?php echo $index; ?>);" data-id="<?php echo $row['employee_id']; ?>">View</a> | <a href="/edit-employee/<?php echo $row['company_id'] ?>">Edit</a> | <a href="/delete-employee/<?php echo $row['employee_id'] ?>">Delete</a></td>
+                                <td><?php echo $row['employee_birthday']; ?></td>
+                                <td><a href="#" onclick="view(<?php echo $index; ?>);" data-id="<?php echo $row['employee_id']; ?>">View</a> | <a href="/edit-employee/<?php echo $row['company_id'] ?>/<?php echo $row['employee_id'] ?>">Edit</a> | <a href="/delete-employee/<?php echo $row['company_id'] ?>/<?php echo $row['employee_id'] ?>">Delete</a></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -68,9 +68,11 @@ function view(index){
     $('#view-name').html(
         '<h4>'+data[index]['employee_name']+'</h4>'
     );
-    $('#view-image').html(
-        '<img src="'+data[index]['employee_picture']+'" width="200px" height="200px">'
-    );
+    if (data[index]['employee_picture'] != null){
+        $('#view-image').html(
+        '<img src="<?php echo base_url()?>'+data[index]['employee_picture']+'" width="200px" height="200px">'
+        );
+    };
     $('#view-gender').html(
         '<p class="mb-0">Gender: '+gender+'</p>'
     );
