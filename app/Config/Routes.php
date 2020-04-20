@@ -40,8 +40,12 @@ $routes->get('/delete-company/(:num)', 'CompanyController::deleteCompany/$1');
 $routes->get('/detail-company/(:num)', 'CompanyController::showCompanyDetail/$1');
 
 $routes->get('/employee-list/(:num)', 'EmployeeController::showEmployeeList/$1');
-$routes->get('/delete-employee/(:num)', 'EmployeeController::deleteEmployee/$1');
+$routes->get('/delete-employee/(:num)/(:num)', 'EmployeeController::deleteEmployee/$1/$2');
+$routes->get('/edit-employee/(:num)/', 'EmployeeController::showAddEmployee/$1');
+$routes->get('/edit-employee/(:num)/(:num)', 'EmployeeController::showSpecificEmployee/$1/$2');
 
+$routes->post('/edit-employee/(:num)/(:num)', 'EmployeeController::editEmployee/$1/$2');
+$routes->post('/edit-employee/(:num)/add', 'EmployeeController::addEmployee/$1');
 $routes->post('/edit-company/(:num)', 'CompanyController::editCompany/$1');
 $routes->post('/edit-company/add', 'CompanyController::addCompany');
 $routes->post('/add-company', 'CompanyController::addCompany');

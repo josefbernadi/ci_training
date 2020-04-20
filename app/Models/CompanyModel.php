@@ -27,6 +27,12 @@ class CompanyModel extends Model
         return $query;
     }
 
+    public function getCompanyName($id)
+    {
+        $query = $this->db->table($this->table)->select('company_name')->where('company_id',$id);
+        return $query->get()->getRowArray();
+    }
+
     public function deleteCompany($id)
     {
         $query = $this->db->table($this->table)->delete(array('company_id' => $id));
